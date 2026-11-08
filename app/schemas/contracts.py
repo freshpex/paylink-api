@@ -38,7 +38,33 @@ class LinkInput(BaseModel):
     description: str = Field(default="", max_length=3000)
     category: Literal["tuition", "invoice", "service", "donation", "other"] = "tuition"
     amount: int = Field(strict=True, ge=100, le=100000000)
-    currency: Literal["USD", "NGN", "GBP", "EUR"] = "USD"
+    currency: Literal[
+        "USD",
+        "NGN",
+        "GBP",
+        "EUR",
+        "SAR",
+        "CNY",
+        "AED",
+        "AUD",
+        "CAD",
+        "CHF",
+        "HKD",
+        "INR",
+        "KES",
+        "ZAR",
+        "SGD",
+        "NZD",
+        "GHS",
+        "EGP",
+        "TRY",
+        "MYR",
+        "PKR",
+        "BDT",
+        "BRL",
+        "MXN",
+        "THB",
+    ] = "USD"
     methods: list[PaymentMethod] = Field(min_length=1, max_length=10)
     receipt_heading: str = Field(default="Payment receipt", min_length=1, max_length=100)
     receipt_footer: str = Field(default="Thank you for your payment.", max_length=1000)

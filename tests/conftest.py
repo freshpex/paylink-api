@@ -2,7 +2,9 @@ import os
 
 os.environ["JWT_SECRET"] = "test-secret-must-be-at-least-32-characters"
 os.environ["DATABASE_URL"] = "sqlite://"
+os.environ["DATABASE_URL_UNPOOLED"] = ""
 os.environ["COOKIE_SECURE"] = "false"
+os.environ["FRONTEND_URL"] = "http://localhost:5173"
 from app.core.db import Base, get_db
 from app.main import app
 from sqlalchemy import create_engine
